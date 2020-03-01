@@ -1,0 +1,29 @@
+﻿@page
+@model RegisterModel
+@{ViewData["Title"] = "Регистрация";}
+<div class="row">
+<div class="col-md-12">
+<form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <h2>Направи свой профил!</h2><hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group"> <label asp-for="Input.Nickname">Потребителско име</label><input asp-for="Input.Nickname" class="form-control" /><span asp-validation-for="Input.Nickname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Email">Електронна поща</label><input asp-for="Input.Email" class="form-control" /><span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.FirstName">Собствено име</label><input asp-for="Input.FirstName" class="form-control" /><span asp-validation-for="Input.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.LastName">Фамилия</label><input asp-for="Input.LastName" class="form-control" /><span asp-validation-for="Input.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group"><label asp-for="Input.Password">Парола</label><input asp-for="Input.Password" class="form-control" /><span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.ConfirmPassword">Потвърди парола</label><input asp-for="Input.ConfirmPassword" class="form-control" /><span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+    </div><button type="submit" class="btn btn-primary">Регистрирай се сега!</button>
+</form>
+</div>   
+</div>
+
+@section Scripts {<partial name="_ValidationScriptsPartial" />}
