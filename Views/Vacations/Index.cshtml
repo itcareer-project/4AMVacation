@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Project_Vacation_Manager.Models.Vacation>
+@{    ViewData["Title"] = "Начало на отпуските ;)";}
+<p><a asp-action="Create">Една нова отпуска? ;)</a></p>
+<table class="table">
+<thead>
+<tr>
+    <th>@Html.DisplayNameFor(model => model.User)</th>
+    <th>@Html.DisplayNameFor(model => model.StartVac)</th>
+    <th>@Html.DisplayNameFor(model => model.EndVac)</th>
+    <th>@Html.DisplayNameFor(model => model.RequestDate)</th>
+    <th>@Html.DisplayNameFor(model => model.Accepted)</th>
+</tr>
+</thead>
+<tbody>
+@foreach (var item in Model) {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.User)</td>
+    <td>@Html.DisplayFor(modelItem => item.StartVac)</td>
+    <td>@Html.DisplayFor(modelItem => item.EndVac)</td>
+    <td>@Html.DisplayFor(modelItem => item.RequestDate)</td>
+    <td>@Html.DisplayFor(modelItem => item.Accepted)</td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Редактирай</a>
+        <a asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+        <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+    </td>
+</tr>}
+</tbody>
+</table>

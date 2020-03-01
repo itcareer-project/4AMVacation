@@ -1,0 +1,20 @@
+﻿@model Project_Vacation_Manager.Models.Team
+@{ViewData["Title"] = "Изтрий";}
+<h1>Изтрий някой екип ;(</h1>
+<div>
+<dl class="row">
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.Title)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.Title)</dd>
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.ProjectName)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.ProjectName)</dd>
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.Developers)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.Developers)</dd>
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.TeamLeader)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.TeamLeader)</dd>
+</dl>    
+<form asp-action="Delete">
+<input type="hidden" asp-for="Id" />
+<input type="submit" value="Delete" class="btn btn-danger" />
+<a asp-action="Index">Назааад</a>
+</form>
+</div>

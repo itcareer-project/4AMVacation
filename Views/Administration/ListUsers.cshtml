@@ -1,0 +1,31 @@
+﻿@using Project_Vacation_Manager.Data;
+@model IEnumerable<ApplicationUser>
+@{ ViewBag.Title = "Всички потребители";}
+
+@if (Model.Any())
+{
+<a asp-action="Account" asp-controller="Identity" class="btn btn-primary mb-3" style="width:auto">Добави нов потребител ;)</a>
+foreach (var user in Model)
+{
+<div class="card mb-3"><div class="card-header"> Потребител Id : @user.Id </div>
+<div class="card-body">
+<h5 class="card-title">@user.UserName</h5>
+<h6 class="card-title">@user.FirstName</h6>
+<h6 class="card-title">@user.LastName</h6>
+<h6 class="card-title">@user.Team</h6>
+</div>
+<div class="card-footer">
+<a asp-action="EditUser" asp-controller="Administration"
+    asp-route-id="@user.Id" class="btn btn-primary">Редактирай</a>
+<form method="post" asp-action="DeleteUser" asp-route-id="@user.Id">
+    <button type="submit" class="btn btn-danger">Изтрий</button>
+</form>
+</div>
+</div>}}else{
+<div class="card">
+<div class="card-header">Няма потребители все още, съжалявам ;(</div>
+<div class="card-body"><h2 class="card-title">Бутонът долу е за регистриране на нов потребител ;)</h2>
+<a class="btn btn-primary" style="width:auto" asp-controller="Account" asp-action="Register">Добави нов потребител</a>
+</div>
+</div>
+}

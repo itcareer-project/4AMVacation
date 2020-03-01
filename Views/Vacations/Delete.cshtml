@@ -1,0 +1,20 @@
+﻿@model Project_Vacation_Manager.Models.Vacation
+@{ViewData["Title"] = "Изтрий отпуск ;(";}
+<div>
+<dl class="row">
+    <dt class = "col-md-2">@Html.DisplayNameFor(model => model.User)</dt>
+    <dd class = "col-md-10">@Html.DisplayFor(model => model.User)</dd>
+    <dt class = "col-md-2">@Html.DisplayNameFor(model => model.StartVac)</dt>
+    <dd class = "col-md-10">@Html.DisplayFor(model => model.StartVac)</dd>
+    <dt class = "col-md-2">@Html.DisplayNameFor(model => model.EndVac)</dt>
+    <dd class = "col-md-10">@Html.DisplayFor(model => model.EndVac)</dd>
+    <dt class = "col-md-2">@Html.DisplayNameFor(model => model.RequestDate)</dt>
+    <dd class = "col-md-10">@Html.DisplayFor(model => model.RequestDate)</dd>
+    <dt class = "col-md-2">@Html.DisplayNameFor(model => model.Accepted)</dt>
+    <dd class = "col-md-10">@Html.DisplayFor(model => model.Accepted)</dd>
+</dl>    
+<form asp-action="Delete"><input type="hidden" asp-for="Id" />
+<input type="submit" value="Delete" class="btn btn-danger" />
+<a asp-action="Index">Назааад</a>
+</form>
+</div>

@@ -1,0 +1,19 @@
+﻿@model Project_Vacation_Manager.Models.Team
+@{ViewData["Title"] = "Подробности";}
+<h1>Подробности</h1>
+<div>
+<dl class="row">
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.Title)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.Title)</dd>
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.ProjectName)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.ProjectName)</dd>
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.Developers)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.Developers)</dd>
+<dt class="col-md-6">@Html.DisplayNameFor(model => model.TeamLeader)</dt>
+<dd class="col-md-6">@Html.DisplayFor(model => model.TeamLeader)</dd>
+</dl>
+</div>
+<div>
+<a asp-action="Edit" asp-route-id="@Model.Id">Редактирай</a>
+<a asp-action="Index">Назаааад</a>
+</div>

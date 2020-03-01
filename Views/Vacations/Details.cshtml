@@ -1,0 +1,19 @@
+﻿@model Project_Vacation_Manager.Models.Vacation
+@{ViewData["Title"] = "Подробности да отпуската";}
+<div>
+<dl class="row">
+<dt class = "col-md-2">@Html.DisplayNameFor(model => model.User)</dt>
+<dd class = "col-md-10">@Html.DisplayFor(model => model.User)</dd>
+<dt class = "col-md-2">@Html.DisplayNameFor(model => model.StartVac)</dt>
+<dd class = "col-md-10">@Html.DisplayFor(model => model.StartVac)</dd>
+<dt class = "col-md-2">@Html.DisplayNameFor(model => model.EndVac)</dt>
+<dd class = "col-md-10">@Html.DisplayFor(model => model.EndVac)</dd>
+<dt class = "col-md-2">@Html.DisplayNameFor(model => model.RequestDate)</dt>
+<dd class = "col-md-10">@Html.DisplayFor(model => model.RequestDate)</dd>        
+<dt class = "col-md-2">@Html.DisplayNameFor(model => model.Accepted)</dt>
+<dd class = "col-md-10">@Html.DisplayFor(model => model.Accepted)</dd>
+</dl>
+</div>
+<div><a asp-action="Edit" asp-route-id="@Model.Id">Редактирай</a>
+<a asp-action="Index">Назааад</a>
+</div>

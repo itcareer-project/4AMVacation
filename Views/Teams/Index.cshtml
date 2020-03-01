@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Project_Vacation_Manager.Models.Team>
+@{ViewData["Title"] = "Екипиии";}
+<span><a asp-action="Create">Създай нов екип</a></span>
+<table class="table">
+<thead>
+<tr>
+<th>@Html.DisplayNameFor(model => model.Title)</th>
+<th>@Html.DisplayNameFor(model => model.ProjectName)</th>
+<th>@Html.DisplayNameFor(model => model.Developers)</th>
+<th>@Html.DisplayNameFor(model => model.TeamLeader)</th>
+</tr>
+</thead>
+<tbody>
+@foreach (var item in Model) {
+<tr>
+<td>@Html.DisplayFor(modelItem => item.Title)</td>
+<td>@Html.DisplayFor(modelItem => item.ProjectName)</td>
+<td>@Html.DisplayFor(modelItem => item.Developers)</td>
+<td>@Html.DisplayFor(modelItem => item.TeamLeader)</td>
+<td>
+    <a asp-action="Edit" asp-route-id="@item.Id">Редактирай</a>
+    <a asp-action="Details" asp-route-id="@item.Id">Подробности</a>
+    <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+</td>
+</tr>}
+</tbody>
+</table>

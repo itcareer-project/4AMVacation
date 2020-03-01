@@ -1,0 +1,66 @@
+﻿@model Project_Vacation_Manager.ViewModels.EditUserViewModel
+@{ViewBag.Title = "Редактиране на потребител";}
+<form method="post" class="mt-3">
+<div class="form-group row">
+<label asp-for="Id" class="col-sm-2 col-form-label">Идентификационен номер</label>
+<div class="col-md-10">
+    <input asp-for="Id" disabled class="form-control">
+</div>
+</div>
+<div class="form-group row">
+<label asp-for="Email" class="col-sm-2 col-form-label">Електронна поща</label>
+<div class="col-md-10">
+    <input asp-for="Email" class="form-control">
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+</div>
+<div class="form-group row">
+<label asp-for="UserName" class="col-sm-2 col-form-label">Потребителско име</label>
+<div class="col-md-10">
+    <input asp-for="UserName" class="form-control">
+    <span asp-validation-for="UserName" class="text-danger"></span>
+</div>
+</div>
+<div class="form-group row">
+<label asp-for="FirstName" class="col-sm-2 col-form-label">Собствено име</label>
+<div class="col-md-10">
+    <input asp-for="FirstName" class="form-control">
+</div>
+</div>
+
+<div class="form-group row">
+<label asp-for="LastName" class="col-sm-2 col-form-label">Фамилия</label>
+<div class="col-md-10">
+    <input asp-for="LastName" class="form-control">
+</div>
+</div>
+<div class="form-group row">
+<label asp-for="Team" class="col-sm-2 col-form-label">Екип</label>
+<div class="col-md-10">
+    <input asp-for="Team" class="form-control">
+</div>
+</div>
+<div asp-validation-summary="All" class="text-danger"></div>
+<div class="form-group row">
+<div class="col-md-10">
+    <button type="submit" class="btn btn-primary">Обнови</button>
+    <a asp-action="ListUsers" class="btn btn-primary">Отказ</a>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+    <h1>Потребителски роли</h1>
+</div>
+<div class="card-body">
+    @if (Model.Roles.Any())
+    {
+        foreach (var role in Model.Roles)
+        {<h4 class="card-title">@role</h4>}
+    }
+    else {<h4 class="card-title">Няма такива в момента, съжалявам ;(</h4>}
+</div>
+<div class="card-footer">            
+    <a asp-action="ManageUserRoles" asp-route-userId="@Model.Id" class="btn btn-primary">Управлявай ролите</a>
+</div>
+</div>
+</form>
